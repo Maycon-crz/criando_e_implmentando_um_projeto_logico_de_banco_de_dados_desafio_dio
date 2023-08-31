@@ -240,10 +240,45 @@ show tables;
 -- Recuperações simples com SELECT Statement
 SELECT * FROM clients;
 SELECT * FROM orders;
+SELECT * FROM product;
 SELECT * FROM productStorage;
+SELECT * FROM productSeller;
 SELECT * FROM supplier;
 SELECT * FROM seller;
-SELECT * FROM productSeller;
+
+-- Quantos pedidos foram feitos por cada cliente?
+SELECT 
+  clients.Fname,
+  clients.Lname,
+  COUNT(*) AS quantidade_de_pedidos
+FROM clients
+JOIN orders ON clients.idClient = orders.idOrderClient
+GROUP BY clients.Fname, clients.Lname;
+
+-- Algum vendedor também é fornecedor?
+SELECT 
+  seller.SocialName,
+  seller.CNPJ
+FROM seller
+JOIN supplier ON seller.CNPJ = supplier.CNPJ;
+
+-- Relação de produtos fornecedores e estoques;
+SELECT 
+  product.Pname,
+  supplier.SocialName,
+  productSeller.prodQuantity
+FROM product
+JOIN productSeller ON product.idProduct = productSeller.idPproduct
+JOIN supplier ON productSeller.idPseller = supplier.idSupplier;
+
+-- Relação de nomes dos fornecedores e nomes dos produtos
+SELECT 
+  supplier.SocialName,
+  product.Pname
+FROM product
+JOIN productSeller ON product.idProduct = productSeller.idPproduct
+JOIN supplier ON productSeller.idPseller = supplier.idSupplier;
+
 -- Filtros com WHERE Statement
 SELECT * FROM clients WHERE Fname LIKE '%Maria%';
 SELECT * FROM orders WHERE orderStatus = 'Confirmado';
