@@ -34,3 +34,7 @@ Assim como demonstrado durante o desafio, realize a criação do Script SQL para
 - Algum vendedor também é fornecedor?
 - Relação de produtos fornecedores e estoques;
 - Relação de nomes dos fornecedores e nomes dos produtos;
+
+### Referências
+- Platafroma DIO: https://web.dio.me
+- Especialista técnica: Juliana Mascarenhas
