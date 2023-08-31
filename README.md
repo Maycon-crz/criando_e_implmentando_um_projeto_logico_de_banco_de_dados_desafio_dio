@@ -28,8 +28,8 @@ Assim como demonstrado durante o desafio, realize a criação do Script SQL para
 - Cliente PJ e PF – Uma conta pode ser PJ ou PF, mas não pode ter as duas informações;
 - Pagamento – Pode ter cadastrado mais de uma forma de pagamento;
 - Entrega – Possui status e código de rastreio;
-- Algumas das perguntas que podes fazer para embasar as queries SQL:
-
+  
+#### Algumas das perguntas que podes fazer para embasar as queries SQL:
 - Quantos pedidos foram feitos por cada cliente?
 - Algum vendedor também é fornecedor?
 - Relação de produtos fornecedores e estoques;
